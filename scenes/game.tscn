@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://buttjulqvcgm"]
+
+[ext_resource type="PackedScene" uid="uid://dmk7y8xg2cht7" path="res://scenes/player.tscn" id="1_uwrxv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+
+[node name="Game" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+debug_color = Color(0.965636, 0.950572, 0.966828, 0.42)
+
+[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(-10, -36)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-10, -36)
+position_smoothing_enabled = true
